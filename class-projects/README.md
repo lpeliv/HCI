@@ -2,4 +2,4 @@
 
 References to class projects:
 
-- [Task 1](/class-projects/Task 1/)
+- [Task 1](/class-projects/Task-1/)
