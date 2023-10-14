@@ -1,0 +1,3 @@
+# Task 1
+
+Video for the first task is available [here](https://fesb-my.sharepoint.com/:v:/g/personal/lpeliv00_fesb_hr/EcoEcN1GBeNLtnYO1Y5ZKdcBRFYj2rBE8Upf7m3IGOB3pw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&e=ctSBBk).
