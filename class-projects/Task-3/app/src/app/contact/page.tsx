@@ -1,12 +1,11 @@
-import React from 'react';
+import styles from './contact.module.css' 
 
-const Contact: React.FC = () => {
-  return (
-    <div>
-      <h1>Contact Us</h1>
-      <p>You can reach us at contact@example.com.</p>
-    </div>
-  );
-};
+function Contact() {
+    return(
+        <div className = {styles.h1}>
+            <h1>This is Contact page</h1>
+        </div>
+    );
+}
 
 export default Contact;

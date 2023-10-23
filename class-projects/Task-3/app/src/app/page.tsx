@@ -1,14 +1,9 @@
-import About from './about/page';
-import Contact from './contact/page';
+import styles from './home.module.css' 
 
 function HomePage() {
   return (
-    <div>
-      <h1>Welcome to the Homepage</h1>
-      <p>This is the homepage of your Next.js app.</p>
-      
-      <About />
-      <Contact />
+    <div className = {styles.h1}>
+      <h1>This is Home page</h1>
     </div>
   );
 }

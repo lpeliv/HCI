@@ -1,12 +1,11 @@
-import React from 'react';
+import styles from './about.module.css' 
 
-const About: React.FC = () => {
-  return (
-    <div>
-      <h1>About Me</h1>
-      <p>This is the about page of your Next.js app.</p>
-    </div>
-  );
-};
+function About() {
+    return(
+        <div className = {styles.h1}>
+            <h1>This is About page</h1>
+        </div>
+    );
+}
 
 export default About;
