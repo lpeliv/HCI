@@ -1,7 +1,7 @@
 # Task 6
 ## Project Tasks: Full Responsive Page Coding
 
-Web page can be accesed [HERE](https://gamedev.vercel.app/). <br>
+Web page can be accesed [HERE](https://gamedev-rust.vercel.app/). <br>
 High-Fidelity Prototype can be found here: 
 - [PC](/class-projects/Task-6/prototypes/HomePagehomepagePC.png).
 - [Mobile](/class-projects/Task-6/prototypes/MobileHomePagemobilehomepage.png).
