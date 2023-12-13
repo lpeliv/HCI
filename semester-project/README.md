@@ -1,3 +1,3 @@
 # Semester project
 
-Link for the webpage: [PRESS HERE](https://hci-eight.vercel.app/).
+Link for the webpage: [PRESS HERE](https://gamedev-rust.vercel.app/).
