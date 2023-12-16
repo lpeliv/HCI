@@ -18,18 +18,18 @@ const BASE_API_URL = "https://jsonplaceholder.typicode.com";
 const getPosts = async (
   pagination: Pagination = {
     limit: 9999,
-    page:1,
+    page: 1,
   }
 ): Promise<Post[]> => {
   const data = await fetch(
     `${BASE_API_URL}/posts?_limit=${pagination.limit}&_page=${pagination.page}`
-    );
+  );
   return data.json();
 };
 
 const getTotalPosts = async (): Promise<number> => {
   const response = await fetch(`${BASE_API_URL}/posts?_limit=1`, {
-    method: "Head",
+    method: "HEAD",
   });
 
   return parseInt(response.headers.get("x-total-count") || "1", 10);
@@ -37,7 +37,7 @@ const getTotalPosts = async (): Promise<number> => {
 
 export default async function Blog({
   searchParams,
-}: { 
+}: {
   searchParams: Record<string, string | string[] | undefined>;
 }) {
   const { _limit, _page } = searchParams;
@@ -49,10 +49,10 @@ export default async function Blog({
     limit: pageSize,
     page: page,
   });
-  
+
   return (
-    <main className="flex flex-col items-center justify-between p-0 pt-16">
-      <h1 className="text-7xl text-blue-900 font-bold p-10">Member Blog Page</h1>
+    <main className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10">
+      <h1 className="text-3xl font-bold p-10">Blog Index Page</h1>
 
       {_limit && _page && (
         <div className="flex items-baseline gap-8 pb-10">
@@ -110,8 +110,8 @@ export default async function Blog({
         {posts.map((post) => (
           <li key={post.id}>
             <Link href={`blog/${post.id}`}>
-              <span className="text-xl text-blue-700">
-                Post {post.id} {post.title}
+              <span className="text-2xl text-purple-500">
+                Post {post.title}
               </span>
             </Link>
           </li>
