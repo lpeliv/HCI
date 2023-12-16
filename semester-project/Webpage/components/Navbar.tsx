@@ -13,7 +13,7 @@ export type Page = {
 
 const pages: Page[] = [
     { href: "/", title: "Home" },
-    { href: "/blog", title: "Blog" },
+    { href: "/blog?_page=1&_limit=10", title: "Blog" },
     { href: "/about", title: "About Us" },
     { href: "/contact", title: "Contact Us" },
     { href: "/games", title: "Games" },

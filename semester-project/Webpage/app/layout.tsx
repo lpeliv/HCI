@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 const pages: Record<string, `/${string}`> = {
   home: "/",
   showcase: "/showcase",
-  blog: "/blog",
+  blog: "/blog?_page=1&_limit=10",
   about: "/about",
   games: "/games",
   contact: "/contact",

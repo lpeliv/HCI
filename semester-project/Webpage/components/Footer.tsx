@@ -10,7 +10,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="font-roboto-condensed text-blue-100 text-xl font-bold uppercase grid grid-cols-2 lg:grid-cols-3 gap-4 text-center">
-          <Link href="/blog" passHref>
+          <Link href="/blog?_page=1&_limit=10" passHref>
             <div className="hover:text-blue-400">Blog</div>
           </Link>
           <Link href="/about" passHref>
