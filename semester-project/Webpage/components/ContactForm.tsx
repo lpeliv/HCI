@@ -29,10 +29,10 @@ const ContactForm = () => {
     return (
         <form onSubmit={handleSubmit} className="max-w-2xl mx-auto p-4">
 
-            <div className="mb-4">
+            <div className="mb-6">
                 <label
-                    htmlFor="writing"
-                    className="block text-2xl font-roboto text-blue-900 font-bold"
+                    htmlFor="name"
+                    className="block text-3xl font-roboto text-blue-900 font-bold"
                     style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}
                 >
                     Your Name:
@@ -42,18 +42,17 @@ const ContactForm = () => {
                     id="name"
                     name="name"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={handleChange}
                     placeholder="Name . . ."
-                    className="mt-1 p-2 w-full rounded-md font-roboto text-base bg-blue-50 bg-opacity-80 text-opacity-70 italic"
+                    className="mt-1 p-4 w-full rounded-md font-roboto text-lg bg-blue-50 bg-opacity-80 text-opacity-70 italic"
                     required
                 />
-
             </div>
 
-            <div className="mb-4">
+            <div className="mb-6">
                 <label
-                    htmlFor="writing"
-                    className="block text-2xl font-roboto text-blue-900 font-bold"
+                    htmlFor="email"
+                    className="block text-3xl font-roboto text-blue-900 font-bold"
                     style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}
                 >
                     E-mail:
@@ -63,19 +62,17 @@ const ContactForm = () => {
                     id="email"
                     name="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={handleChange}
                     placeholder="mail@example.com"
-                    className="mt-1 p-2 w-full rounded-md font-roboto text-base bg-blue-50 bg-opacity-80 text-opacity-70 italic"
+                    className="mt-1 p-4 w-full rounded-md font-roboto text-lg bg-blue-50 bg-opacity-80 text-opacity-70 italic"
                     required
                 />
-
-
             </div>
 
-            <div className="mb-4">
+            <div className="mb-6">
                 <label
                     htmlFor="writing"
-                    className="block text-2xl font-roboto text-blue-900 font-bold"
+                    className="block text-3xl font-roboto text-blue-900 font-bold"
                     style={{ textShadow: '1px 1px 1px rgba(0, 0, 0, 0.5)' }}
                 >
                     Your Message:
@@ -84,20 +81,19 @@ const ContactForm = () => {
                     id="writing"
                     name="writing"
                     value={writing}
-                    onChange={(e) => setWriting(e.target.value)}
+                    onChange={handleChange}
                     placeholder="Message here . . ."
-                    className="mt-1 p-2 w-full rounded-md font-roboto text-base bg-blue-50 bg-opacity-80 text-opacity-70 italic"
+                    className="mt-1 p-4 w-full rounded-md font-roboto text-lg bg-blue-50 bg-opacity-80 text-opacity-70 italic"
                     rows={6}
                     required
                 ></textarea>
             </div>
             <button
                 type="submit"
-                className="text-brand-blue-700 py-2 px-4 rounded-md text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl bg-blue-100 hover:bg-blue-900 hover:text-blue-100 hover:shadow-lg transition-all duration-300 ease-in-out font-bold mx-auto"
+                className="text-brand-blue-700 py-4 px-8 rounded-md text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl bg-blue-100 hover:bg-blue-900 hover:text-blue-100 hover:shadow-lg transition-all duration-300 ease-in-out font-bold mx-auto"
             >
                 Submit
             </button>
-
         </form>
     );
 };
