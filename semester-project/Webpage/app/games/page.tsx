@@ -1,4 +1,6 @@
-import React from "react";
+"use client"
+import React from "react";7
+
 import Image, { StaticImageData } from "next/image";
 import unrealPreview from "@/public/hero/UnrealGameImage1.png";
 import vr2 from "@/public/hero/VR2.png";
@@ -42,7 +44,7 @@ const cardData: CardData[] = [
 ];
 
 const Card: React.FC<CardData & { even: boolean }> = ({ id, imageSrc, title, description, even }) => (
-  <div className={`card ${even ? 'bg-blue-200' : 'bg-blue-400'} rounded-md`} style={{ padding: '20px', marginBottom: '0', width: '100%' }}>
+  <div className={`card ${even ? 'bg-blue-200' : 'bg-blue-200'} rounded-md`} style={{ padding: '20px', marginBottom: '0', width: '100%' }}>
     {typeof imageSrc === 'string' ? (
       <img src={imageSrc} alt={title} style={{ width: '100%', height: 'auto' }} />
     ) : (
@@ -63,16 +65,29 @@ const Card: React.FC<CardData & { even: boolean }> = ({ id, imageSrc, title, des
 );
 
 const CardGrid: React.FC = () => (
-  <div className="card-grid" style={{ gap: '20px' }}>
-    {cardData.map((card, index) => (
-      <Card
-        key={card.id}
-        {...card}
-        even={index % 2 === 0}
-      />
-    ))}
-  </div>
+  <>
+    <div className="card-grid">
+      {cardData.map((card, index) => (
+        <Card key={card.id} {...card} even={index % 2 === 0} />
+      ))}
+    </div>
+
+    <style jsx>{`
+      .card-grid {
+        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+
+      @media (max-width: 767px) {
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    `}</style>
+  </>
 );
+
 
 export default function Games() {
   return (
