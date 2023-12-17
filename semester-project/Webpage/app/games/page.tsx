@@ -1,7 +1,8 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import unrealPreview from "@/public/hero/UnrealGameImage1.png";
-import hammer from "@/public/hero/hammer.png";
+import vr2 from "@/public/hero/VR2.png";
+import zombie from "@/public/hero/zombie.png";
 import hammerHD from "@/public/hero/hammerHD.png";
 
 // Dummy data for illustration
@@ -22,13 +23,13 @@ const cardData: CardData[] = [
   },
   {
     id: 2,
-    imageSrc: unrealPreview,
+    imageSrc: vr2,
     title: "Veronica Virtual",
     description: "Tycoon, enemy defense",
   },
   {
     id: 3,
-    imageSrc: unrealPreview,
+    imageSrc: zombie,
     title: "Gabriela Guts",
     description: "Mecha, zombie survival",
   },
