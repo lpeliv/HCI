@@ -42,15 +42,15 @@ const cardData: CardData[] = [
 ];
 
 const Card: React.FC<CardData & { even: boolean }> = ({ id, imageSrc, title, description, even }) => (
-  <div className={`card ${even ? 'bg-blue-200' : 'bg-blue-400'} rounded-md`} style={{ padding: '20px', marginBottom: '0' }}>
+  <div className={`card ${even ? 'bg-blue-200' : 'bg-blue-400'} rounded-md`} style={{ padding: '20px', marginBottom: '0', width: '100%' }}>
     {typeof imageSrc === 'string' ? (
-      <img src={imageSrc} alt={title} />
+      <img src={imageSrc} alt={title} style={{ width: '100%', height: 'auto' }} />
     ) : (
       <Image
         src={imageSrc}
         alt={title}
         layout="responsive"
-        className="rounded-md relative max-w-[1000px] w-full aspect-w-4 aspect-h-2"
+        className="rounded-md"
         style={{
           objectFit: "cover",
           ...(id === 1 ? { transform: 'rotate(-45deg)' } : {}),
@@ -81,7 +81,7 @@ export default function Games() {
         <div className="font-roboto-condensed whitespace-break-spaces text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl p-5">
           <div className="flex flex-col items-center justify-start gap-5">
             <div className="relative max-w-[1000px] w-full aspect-w-4 aspect-h-2">
-              <div className=" whitespace-break-spaces text-center font-bold text-brand-blue-50 whitespace-nowrap text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl p-5" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+              <div className=" whitespace-break-spaces text-center font-bold text-brand-blue-50 whitespace-nowrap text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl p-5" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', maxWidth: '100%' }}>
                 <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl text-brand-blue-900">
                   Our game library
                 </h1>
