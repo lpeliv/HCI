@@ -54,13 +54,14 @@ export default function RootLayout({
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
       <body
         className={clsx(
+          "flex flex-col min-h-screen",
           roboto.variable,
           roboto_condensed.variable,
           playfairDisplay.variable
         )}
       >
         <Navbar />
-        {children}
+        <main className="flex-grow">{children}</main>
         <Footer />
 
       </body>
