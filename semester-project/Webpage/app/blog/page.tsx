@@ -51,72 +51,130 @@ export default async function Blog({
   });
 
   return (
-    <main className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10">
-      <h1 className="text-3xl font-bold p-10">Blog Index Page</h1>
-
-      {_limit && _page && (
-        <div className="flex items-baseline gap-8 pb-10">
-          <div>
-            Page {page} of {totalPages}
-          </div>
-          <div className="flex gap-4">
-            <Link
-              href={{
-                pathname: "/blog",
-                query: { _page: 1, _limit: pageSize },
-              }}
-              className="rounded border bg-gray-100 px-3 py-1 text-gray-800"
-            >
-              First
-            </Link>
-            <Link
-              href={{
-                pathname: "/blog",
-                query: { _page: page > 1 ? page - 1 : 1, _limit: pageSize },
-              }}
-              className={clsx(
-                "rounded border bg-gray-100 px-3 py-1 text-gray-800",
-                page === 1 && "pointer-events-none opacity-50"
-              )}
-            >
-              Previous
-            </Link>
-            <Link
-              href={{
-                pathname: "/blog",
-                query: { _page: page + 1, _limit: pageSize },
-              }}
-              className={clsx(
-                "rounded border bg-gray-100 px-3 py-1 text-gray-800",
-                page === totalPages && "pointer-events-none opacity-50"
-              )}
-            >
-              Next
-            </Link>
-            <Link
-              href={{
-                pathname: "/blog",
-                query: { _page: totalPages, _limit: pageSize },
-              }}
-              className="rounded border bg-gray-100 px-3 py-1 text-gray-800"
-            >
-              Last
-            </Link>
+    <main className="justify-between items-center pt-16">
+      <section className="justify-center p-10 mx-auto bg-blue-300">
+        <div className="font-roboto-condensed whitespace-break-spaces text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl p-5 text-blue-100">
+          <div className="flex flex-col items-center justify-start gap-5">
+            <div className="relative max-w-[1000px] w-full aspect-w-4 aspect-h-2">
+              <div className=" whitespace-break-spaces text-center font-bold text-brand-blue-50 whitespace-nowrap text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl p-5 text-blue-100" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', maxWidth: '100%' }}>
+                <h1 className="text-3xl font-bold p-10 text-blue-50">Blog Index Page</h1>
+                {(_limit && _page) && (
+                  <>
+                    {/* Pagination links at the beginning */}
+                    <div className="pb-10 text-blue-50">
+                      <div>
+                        Page {page} of {totalPages}
+                      </div>
+                      <div className="flex flex-col gap-4">
+                        <Link
+                          href={{
+                            pathname: "/blog",
+                            query: { _page: 1, _limit: pageSize },
+                          }}
+                          className="rounded border bg-gray-100 px-3 py-1 text-blue-800"
+                        >
+                          First
+                        </Link>
+                        <Link
+                          href={{
+                            pathname: "/blog",
+                            query: { _page: page > 1 ? page - 1 : 1, _limit: pageSize },
+                          }}
+                          className={clsx(
+                            "rounded border bg-gray-100 px-3 py-1 text-blue-800",
+                            page === 1 && "pointer-events-none opacity-50"
+                          )}
+                        >
+                          Previous
+                        </Link>
+                        <Link
+                          href={{
+                            pathname: "/blog",
+                            query: { _page: page + 1, _limit: pageSize },
+                          }}
+                          className={clsx(
+                            "rounded border bg-gray-100 px-3 py-1 text-blue-800",
+                            page === totalPages && "pointer-events-none opacity-50"
+                          )}
+                        >
+                          Next
+                        </Link>
+                        <Link
+                          href={{
+                            pathname: "/blog",
+                            query: { _page: totalPages, _limit: pageSize },
+                          }}
+                          className="rounded border bg-gray-100 px-3 py-1 text-blue-800"
+                        >
+                          Last
+                        </Link>
+                      </div>
+                    </div>
+                    <ul className="flex flex-col gap-8 p-4">
+                      {posts.map((post) => (
+                        <li key={post.id} className="bg-blue-100 p-2 rounded-lg">
+                          <Link href={`blog/${post.id}`}>
+                            <span className="text-2xl text-blue-900">Post {post.title}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="pb-10 text-blue-50">
+                      <div>
+                        Page {page} of {totalPages}
+                      </div>
+                      <div className="flex flex-col gap-4">
+                        <Link
+                          href={{
+                            pathname: "/blog",
+                            query: { _page: 1, _limit: pageSize },
+                          }}
+                          className="rounded border bg-gray-100 px-3 py-1 text-blue-800"
+                        >
+                          First
+                        </Link>
+                        <Link
+                          href={{
+                            pathname: "/blog",
+                            query: { _page: page > 1 ? page - 1 : 1, _limit: pageSize },
+                          }}
+                          className={clsx(
+                            "rounded border bg-gray-100 px-3 py-1 text-blue-800",
+                            page === 1 && "pointer-events-none opacity-50"
+                          )}
+                        >
+                          Previous
+                        </Link>
+                        <Link
+                          href={{
+                            pathname: "/blog",
+                            query: { _page: page + 1, _limit: pageSize },
+                          }}
+                          className={clsx(
+                            "rounded border bg-gray-100 px-3 py-1 text-blue-800",
+                            page === totalPages && "pointer-events-none opacity-50"
+                          )}
+                        >
+                          Next
+                        </Link>
+                        <Link
+                          href={{
+                            pathname: "/blog",
+                            query: { _page: totalPages, _limit: pageSize },
+                          }}
+                          className="rounded border bg-gray-100 px-3 py-1 text-blue-800"
+                        >
+                          Last
+                        </Link>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
         </div>
-      )}
-
-      <ul className="flex flex-col gap-8">
-        {posts.map((post) => (
-          <li key={post.id}>
-            <Link href={`blog/${post.id}`}>
-              <span className="text-2xl text-purple-500">
-                Post {post.title}
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      </section>
     </main>
   );
 }
