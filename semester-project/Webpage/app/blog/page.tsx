@@ -112,7 +112,7 @@ export default async function Blog({
                       {posts.map((post) => (
                         <li key={post.id} className="bg-blue-100 p-2 rounded-lg">
                           <Link href={`blog/${post.id}`}>
-                            <span className="text-2xl text-blue-900">Post {post.title}</span>
+                            <span className="text-3xl text-blue-900">Post {post.title}</span>
                           </Link>
                         </li>
                       ))}
