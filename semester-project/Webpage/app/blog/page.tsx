@@ -57,15 +57,13 @@ export default async function Blog({
           <div className="flex flex-col items-center justify-start gap-5">
             <div className="relative max-w-[1000px] w-full aspect-w-4 aspect-h-2">
               <div className=" whitespace-break-spaces text-center font-bold text-brand-blue-50 whitespace-nowrap text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl p-5 text-blue-100" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', maxWidth: '100%' }}>
-                <h1 className="text-3xl font-bold p-10 text-blue-50">Blog Index Page</h1>
                 {(_limit && _page) && (
                   <>
-                    {/* Pagination links at the beginning */}
                     <div className="pb-10 text-blue-50">
-                      <div>
+                      <div className="pb-10">
                         Page {page} of {totalPages}
                       </div>
-                      <div className="flex flex-col gap-4">
+                      <div className="flex gap-4 justify-center items-center">
                         <Link
                           href={{
                             pathname: "/blog",
@@ -120,10 +118,10 @@ export default async function Blog({
                       ))}
                     </ul>
                     <div className="pb-10 text-blue-50">
-                      <div>
+                      <div className="pb-10">
                         Page {page} of {totalPages}
                       </div>
-                      <div className="flex flex-col gap-4">
+                      <div className="flex gap-4 justify-center items-center">
                         <Link
                           href={{
                             pathname: "/blog",
