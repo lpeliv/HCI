@@ -1,5 +1,6 @@
 import Link from "next/link";
 import clsx from "clsx";
+import ContentfulData from '@/app/(contentful)/ContentfullData';
 
 export interface Post {
   userId: number;
@@ -108,7 +109,7 @@ export default async function Blog({
                         </Link>
                       </div>
                     </div>
-                    <ul className="flex flex-col gap-8 p-4">
+                    {/* <ul className="flex flex-col gap-8 p-4">
                       {posts.map((post) => (
                         <li key={post.id} className="bg-blue-100 p-2 rounded-lg">
                           <Link href={`blog/${post.id}`}>
@@ -116,7 +117,8 @@ export default async function Blog({
                           </Link>
                         </li>
                       ))}
-                    </ul>
+                    </ul> */}
+                    <ContentfulData />
                     <div className="pb-10 text-blue-50">
                       <div className="pb-10">
                         Page {page} of {totalPages}
