@@ -27,10 +27,10 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    template: "Lab project | %s",
-    default: "Lab project",
+    template: "GameDev | %s",
+    default: "GameDev",
   },
-  description: "Next.js lab project",
+  description: "GameDev page",
 };
 
 const pages: Record<string, `/${string}`> = {
@@ -40,7 +40,7 @@ const pages: Record<string, `/${string}`> = {
   about: "/about",
   games: "/games",
   contact: "/contact",
-  signin: "/signin",
+  signin: "/cms/products",
 };
 
 export default function RootLayout({
