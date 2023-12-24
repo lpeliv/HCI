@@ -100,7 +100,7 @@ export default function Games() {
                   Our game library
                 </h1>
                 <p className="sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl p-5 ">
-                  Games we have / plan to {" "}
+                  Games we plan to {" "}
                   <span className="text-brand-blue-900">
                     release
                   </span>
