@@ -1,4 +1,3 @@
-"use client"
 import Link from "next/link";
 import clsx from "clsx";
 import ContentfulData from '@/app/(contentful)/ContentfullData';
