@@ -7,7 +7,6 @@ import vr2 from "@/public/hero/VR2.png";
 import zombie from "@/public/hero/zombie.png";
 import hammerHD from "@/public/hero/hammerHD.png";
 
-// Dummy data for illustration
 interface CardData {
   id: number;
   imageSrc: string | StaticImageData;
