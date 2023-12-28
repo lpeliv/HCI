@@ -1,6 +1,6 @@
 import Image from "next/image";
 import unrealPreview from "@/public/hero/UnrealGameImage1.png";
-import hammer from "@/public/hero/hammer.png";
+import donuts from "@/public/hero/Donut.png";
 
 const HeroSection = () => (
     <div className="pt-16">
@@ -37,7 +37,7 @@ const HeroSection = () => (
                     {" "}and paid assets!
                 </span>
                 <Image
-                    src={hammer}
+                    src={donuts}
                     alt="Unreal Preview"
                     layout="responsive"
                     className="rounded-md relative max-w-[1000px] w-full aspect-w-4 aspect-h-2"
@@ -50,7 +50,7 @@ const HeroSection = () => (
                 </button>
             </div>
         </section>
-        <section className="justify-center items-center p-10 mx-auto bg-blue-400">
+        <section className="justify-center items-center p-10 mx-auto bg-blue-200">
             <p className="font-roboto whitespace-break-spaces text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl p-5">
                 <div className="flex flex-col items-center justify-start gap-5">
                     <p className="font-roboto whitespace-break-spaces text-center font-bold text-brand-blue-50 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl p-5" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
@@ -65,13 +65,6 @@ const HeroSection = () => (
                     <button className="bg-blue-700 text-brand-blue-50 py-4 px-8 sm:w-2/3 md:w-1/3 lg:w-1/4 xl:w-1/5 rounded-full text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl uppercase font-bold transition-all duration-300 ease-in-out hover:bg-blue-900 hover:shadow-lg">
                         <a href="/games" className="">GAMES</a>
                     </button>
-                </div>
-            </p>
-        </section>
-        <section className="justify-center items-center p-10 mx-auto bg-blue-500">
-            <p className="font-roboto whitespace-break-spaces text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl p-5">
-                <div className="flex flex-col items-center justify-start gap-5">
-                    Continuation 3
                 </div>
             </p>
         </section>
