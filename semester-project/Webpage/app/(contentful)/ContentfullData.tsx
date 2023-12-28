@@ -34,7 +34,7 @@ const ContentfulData = () => {
     <div>
       {data.map((entry: any) => (
         <div className="pb-2">
-          <Link href={`/blog/${entry.sys.id}`}>
+          <Link key={entry.sys.id} href={`/blog/${entry.sys.id}`}>
             <div key={entry.sys.id} className="bg-gradient-to-r from-blue-50 to-blue-300 p-3 rounded-l m-2 transition-all duration-300 ease-in-out transform hover:from-blue-100 hover:to-blue-300 hover:shadow-xl hover:scale-110" style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.5)' }}>
               <h2 className="pb-10 text-blue-900 text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-left">
                 {entry.fields.title}
