@@ -33,9 +33,11 @@ const Dropdown: React.FC<DropdownProps> = ({ menuOpen, onClose }) => {
 
   return (
     <>
-      {visible && (
+      { (
         <div
-          className={`lg:hidden absolute top-24 right-2 p-1 space-y-2 font-roboto-condensed text-brand-blue-900 rounded-md text-xl overflow-hidden transition-transform duration-1000 ${menuOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`lg:hidden absolute top-24 right-1 p-1 space-y-2 font-roboto-condensed 
+          text-brand-blue-900 rounded-md text-xl overflow-hidden transition-transform duration-500 
+          ${menuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
         >
           <ul className="list-none p-0 m-0 font-bold uppercase">
