@@ -36,7 +36,7 @@ const ContentfulData = () => {
     <div>
       {filteredData.map((entry: any) => (
         <div key={entry.sys.id} className="pb-2">
-          <div className="bg-gradient-to-r from-blue-900 to-blue-800 p-3 rounded-l m-2 
+          <div className="bg-gradient-to-r from-blue-900 to-blue-700 p-3 rounded-l m-2 shadow-lg
           transition-all duration-500 ease-in-out transform hover:from-blue-200 
           hover:to-blue-500 hover:shadow-xl hover:scale-110 text-blue-50 hover:text-blue-900"
           style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.5)' }}>

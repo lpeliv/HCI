@@ -49,7 +49,7 @@ const Card: React.FC<CardData & { even: boolean }> = ({
   even,
 }) => (
   <div
-    className={`card ${even ? "bg-gradient-to-t from-blue-900 to-blue-800" : "bg-gradient-to-t from-blue-800 to-blue-700"} rounded-md`}
+    className={`card ${even ? "bg-gradient-to-t from-blue-900 to-blue-700" : "bg-gradient-to-t from-blue-800 to-blue-600"} rounded-md`}
     style={{ padding: "20px", marginBottom: "0", width: "100%" }}
   >
     {typeof imageSrc === "string" ? (
