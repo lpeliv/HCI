@@ -18,28 +18,12 @@ const ContactForm = () => {
     }
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     console.log('Submitted:', { name, email, writing });
 
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, writing }),
-      });
-
-      if (response.ok) {
-        console.log('Email sent successfully!');
-      } else {
-        console.error('Failed to send email.');
-      }
-    } catch (error) {
-      console.error('Error sending email:', error);
-    }
+    // send data to server (will implement later)
   };
 
   return (
