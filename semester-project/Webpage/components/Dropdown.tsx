@@ -12,19 +12,7 @@ const Dropdown: React.FC<DropdownProps> = ({ menuOpen, onClose }) => {
   const [visible, setVisible] = useState(false);
 
   const handleLinkClick = (href: string) => {
-    if (href === '/') {
-      onClose();
-    } else  if (href === '/blog') {
-      onClose();
-    } else  if (href === '/about') {
-      onClose();
-    }else  if (href === '/store') {
-      onClose();
-    }else  if (href === '/games') {
-      onClose();
-    } else  if (href === '/contact') {
-      onClose();
-    }
+    onClose();
   };
 
   useEffect(() => {
@@ -47,42 +35,55 @@ const Dropdown: React.FC<DropdownProps> = ({ menuOpen, onClose }) => {
     <>
       {visible && (
         <div
-          className={`lg:hidden absolute top-24 right-2 p-1 space-y-2 font-roboto text-blue-100 rounded-md text-xl overflow-hidden transition-transform duration-1000 ${menuOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`lg:hidden absolute top-24 right-2 p-1 space-y-2 font-roboto-condensed text-brand-blue-900 rounded-md text-xl overflow-hidden transition-transform duration-1000 ${menuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
         >
-          <ul className="list-none p-0 m-0 ">
-            <li className="mb-1 bg-blue-100 rounded-md p-2 text-center text-blue-800">
+          <ul className="list-none p-0 m-0 font-bold uppercase">
+            <li className="mb-1 text-center">
               <Link href="/" onClick={() => handleLinkClick('/')}>
-                Home
+                <span className="rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 bg-brand-blue-50 hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out">
+                  Home
+                </span>
               </Link>
             </li>
-            <li className="mb-1 bg-blue-100 rounded-md p-1 text-center text-blue-800">
+            <li className="mb-1 text-center">
               <Link href="/blog" onClick={() => handleLinkClick('/blog')}>
-                Blog
+                <span className="rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 bg-brand-blue-50 hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out">
+                  Blog
+                </span>
               </Link>
             </li>
-            <li className="mb-1 bg-blue-100 rounded-md p-1 text-center text-blue-800">
+
+            <li className="mb-1 text-center">
               <Link href="/about" onClick={() => handleLinkClick('/about')}>
-                About Us
+                <span className="rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 bg-brand-blue-50 hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out">
+                  About Us
+                </span>
               </Link>
             </li>
-            <li className="mb-1 bg-blue-100 rounded-md p-1 text-center text-blue-800">
+            <li className="mb-1 text-center">
               <Link href="/store" onClick={() => handleLinkClick('/store')}>
-                Store
+                <span className="rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 bg-brand-blue-50 hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out">
+                  Store
+                </span>
               </Link>
             </li>
-            <li className="mb-1 bg-blue-100 rounded-md p-1 text-center text-blue-800">
+            <li className="mb-1 text-center">
               <Link href="/games" onClick={() => handleLinkClick('/games')}>
-                Games
+                <span className="rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 bg-brand-blue-50 hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out">
+                  Games
+                </span>
               </Link>
             </li>
-            <li className="mb-1 bg-blue-100 rounded-md p-1 text-center text-blue-800">
+            <li className="mb-1 text-center">
               <Link href="/contact" onClick={() => handleLinkClick('/contact')}>
-                Contact Us
+                <span className="rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 bg-brand-blue-50 hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out">
+                  Contact Us
+                </span>
               </Link>
             </li>
-          </ul>
-        </div>
+          </ul >
+        </div >
       )}
     </>
   );
