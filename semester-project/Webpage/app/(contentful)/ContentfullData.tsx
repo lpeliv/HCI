@@ -30,9 +30,11 @@ const ContentfulData = () => {
     return <div className="text-blue-900 p-10 rounded-lg">Loading...</div>;
   }
 
+  const filteredData = data.filter((entry: any) => entry.sys.contentType.sys.id === 'blog');
+
   return (
     <div>
-      {data.map((entry: any) => (
+      {filteredData.map((entry: any) => (
         <div key={entry.sys.id} className="pb-2">
           <div className="bg-gradient-to-r from-blue-900 to-blue-800 p-3 rounded-l m-2 
           transition-all duration-500 ease-in-out transform hover:from-blue-200 

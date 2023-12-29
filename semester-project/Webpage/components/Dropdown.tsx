@@ -64,9 +64,9 @@ const Dropdown: React.FC<DropdownProps> = ({ menuOpen, onClose }) => {
               </Link>
             </li>
             <li className="mb-1 text-center">
-              <Link href="/store" onClick={() => handleLinkClick('/store')}>
+              <Link href="/contact" onClick={() => handleLinkClick('/store')}>
                 <span className="rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 bg-brand-blue-50 hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out">
-                  Store
+                  Contact us
                 </span>
               </Link>
             </li>
@@ -78,9 +78,9 @@ const Dropdown: React.FC<DropdownProps> = ({ menuOpen, onClose }) => {
               </Link>
             </li>
             <li className="mb-1 text-center">
-              <Link href="/contact" onClick={() => handleLinkClick('/contact')}>
+              <Link href="/store" onClick={() => handleLinkClick('/contact')}>
                 <span className="rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 bg-brand-blue-50 hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out">
-                  Contact Us
+                  store
                 </span>
               </Link>
             </li>

@@ -23,8 +23,8 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="p-10 mx-auto bg-blue-900">
-        <div className="text-center text-brand-blue-50 text-xl sm:text-3xl md:text-4xl 
+      <section className="p-2 mx-auto bg-blue-900">
+        <div className="text-brand-blue-50 text-xl sm:text-3xl md:text-4xl 
         lg:text-5xl xl:text-6xl p-5">
           <div className="flex flex-col items-center justify-start gap-5">
             <div className="relative max-w-[1000px] w-full aspect-w-4 aspect-h-2">
@@ -60,7 +60,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="p-10 mx-auto bg-blue-800">
+      <section className="p-2 mx-auto bg-blue-800">
         <div className="text-center text-brand-blue-50 text-xl 
         sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl p-5">
           <div className="flex flex-col items-center justify-start gap-5">

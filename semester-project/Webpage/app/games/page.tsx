@@ -70,7 +70,7 @@ const Card: React.FC<CardData & { even: boolean }> = ({
     <h2 className="text-brand-blue-100">{title}</h2>
     <p className="sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl p-10">
       {description}
-      </p>
+    </p>
   </div>
 );
 
@@ -104,16 +104,16 @@ const Games: React.FC = () => (
       <div className="text-center text-brand-blue-50 text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl p-5">
         <div className="flex flex-col items-center justify-start gap-5">
           <div className="text-center  font-bold p-5" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
-              <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl text-brand-blue-100 pb-10">
-                Our game library
-              </h1>
-              <p className="sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl pb-10">
-                Games we have released are listed below.
-              </p>
-              <CardGrid />
-            </div>
+            <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl text-brand-blue-100 pb-10">
+              Our game library
+            </h1>
+            <p className="sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl pb-10">
+              Games we have released are listed below.
+            </p>
+            <CardGrid />
           </div>
         </div>
+      </div>
     </section>
   </main>
 );
