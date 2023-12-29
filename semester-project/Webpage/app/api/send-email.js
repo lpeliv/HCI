@@ -1,24 +1,23 @@
 import nodemailer from 'nodemailer';
-import mailgunTransport from 'nodemailer-mailgun-transport';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, email, writing } = req.body;
-    
-    const transporter = nodemailer.createTransport(
-      mailgunTransport({
-        auth: {
-          api_key: 'd6899d3915e4d58b614c2549793f0292-1900dca6-2a24d524',
-          domain: 'sandbox0cff336ae8e54f2e8c0e26c420ec3a65.mailgun.org',
-        },
-      })
-    );
+
+    const transporter = nodemailer.createTransport({
+      host: 'your-smtp-host',
+      port: 587,
+      secure: false,
+      auth: {
+        user: 'your-smtp-username',
+        pass: 'your-smtp-password',
+      },
+    });
 
     const mailOptions = {
-      from: 'noreply@example.com',
-      to: name,
-      subject: 'Subject of the email',
-      text: 'Thank you for your feedback!',
+      from: email,
+      to: adminEmail,
+      text: `Hello ${name},\n\n${writing}`,
     };
     try {
       
