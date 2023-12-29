@@ -34,14 +34,19 @@ const ContentfulData = () => {
     <div>
       {data.map((entry: any) => (
         <div key={entry.sys.id} className="pb-2">
-          <div className="bg-gradient-to-r from-blue-50 to-blue-300 p-3 rounded-l m-2 transition-all duration-300 ease-in-out transform hover:from-blue-100 hover:to-blue-300 hover:shadow-xl hover:scale-110" style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.5)' }}>
+          <div className="bg-gradient-to-r from-blue-900 to-blue-800 p-3 rounded-l m-2 
+          transition-all duration-500 ease-in-out transform hover:from-blue-200 
+          hover:to-blue-500 hover:shadow-xl hover:scale-110 text-blue-50 hover:text-blue-900"
+          style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.5)' }}>
             <Link href={`/blog/${entry.sys.id}`}>
               <div>
-                <h2 className="pb-10 text-blue-900 text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-left">
+                <h2 className="pb-10  text-lg md:text-xl lg:text-2xl 
+                xl:text-3xl 2xl:text-4xl text-left">
                   {entry.fields.title}
                 </h2>
-                <div className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-blue-500 text-left">
-                  Author: {entry.fields.author}
+                <div className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 
+                text-blue-50 text-left">
+                  Written by {entry.fields.author}
                 </div>
               </div>
             </Link>
