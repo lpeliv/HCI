@@ -48,29 +48,28 @@ export default function BlogPost({ params }: { params: Params }) {
 
   return (
     <main className="justify-between items-center pt-16">
-      <section className="justify-center min-h-screen p-10 mx-auto bg-blue-300">
-        <div className="font-roboto-condensed whitespace-break-spaces text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl p-5">
+      <section className="justify-center p-16 mx-auto bg-blue-800">
+        <div className="text-center text-brand-blue-50 text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl p-5">
           <div className="flex flex-col items-center justify-start gap-5">
-            <div className="relative max-w-[1000px] w-full aspect-w-4 aspect-h-2">
-              <div className="whitespace-break-spaces text-center font-bold text-brand-blue-50 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl p-5" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', maxWidth: '100%' }}>
-                <h1 className="font-extrabold capitalize text-blue-900 text-5xl lg:text-6xl pb-10">
-                  <span className="text-5xl lg:text-6xl">{contentfulData.title}</span>
-                </h1>
-                <div className="text-4xl lg:text-5xl p-10 text-left bg-blue-200 rounded-lg">
-                  <div>{contentfulData.author}</div>
-                  <p>
-                    {documentToReactComponents(contentfulData.content, {
-                      renderNode: {
-                        [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-                      },
-                    })}
-                  </p>
+            <div className="text-center p-5" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+              <h1 className="text-5xl font-bold sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl text-brand-blue-100 pb-10">
+                <span className="text-5xl lg:text-6xl">{contentfulData.title}</span>
+              </h1>
+              <div className="text-4xl lg:text-5xl p-10 text-left bg-gradient-to-t from-blue-900 to-blue-600 rounded-lg shadow-lg">
+                <div className="font-bold pb-10">{contentfulData.author}
                 </div>
+                <p>
+                  {documentToReactComponents(contentfulData.content, {
+                    renderNode: {
+                      [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+                    },
+                  })}
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </section >
+    </main >
   );
 }
