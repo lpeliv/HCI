@@ -16,7 +16,12 @@ const Dropdown: React.FC<DropdownProps> = ({ menuOpen, onClose }) => {
   };
 
   const isActive = (href: string) => {
-    return window.location.pathname === href;
+
+    if (typeof window !== 'undefined') {
+      return window.location.pathname === href;
+    }
+  
+    return false;
   };
 
   useEffect(() => {
