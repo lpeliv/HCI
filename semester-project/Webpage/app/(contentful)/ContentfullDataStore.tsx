@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ContentfulDataStore = () => {
     const [data, setData] = useState<any>(null);
@@ -25,7 +26,7 @@ const ContentfulDataStore = () => {
     }, []);
 
     if (!data) {
-        return <div className="text-blue-900 p-10 rounded-lg">Loading...</div>;
+        return <div className="text-blue-50 p-10 rounded-lg">Loading...</div>;
     }
 
     const filteredData = data.filter((entry: any) => entry.sys.contentType.sys.id === 'store');
@@ -43,6 +44,13 @@ const ContentfulDataStore = () => {
                                 <h2 className="pb-10 text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-left">
                                     {entry.fields.itemName}
                                 </h2>
+                                {entry.fields.asset && entry.fields.asset.fields && (
+                                    <Image
+                                        src={`https:${entry.fields.asset.fields.file.url}`}
+                                        alt={entry.fields.asset.fields.description || ''}
+                                        className="w-full h-auto"
+                                    />
+                                )}
                             </div>
                         </Link>
                     </div>
