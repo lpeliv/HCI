@@ -2,7 +2,7 @@ import ContentfulDataStore from '@/app/(contentful)/ContentfullDataStore';
 
 export default async function Blog() {
     return (
-        <main className="justify-between items-center pt-16">
+        <main className="justify-between items-center pt-16 background-blue-900">
             <section className="justify-center p-16 mx-auto bg-blue-800">
                 <div className="text-center text-brand-blue-50 text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl p-5">
                     <div className="flex flex-col items-center justify-start gap-5">

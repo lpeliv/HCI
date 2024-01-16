@@ -61,7 +61,7 @@ export default function RootLayout({
         )}
       >
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow bg-blue-800">{children}</main>
         <Footer />
 
       </body>
