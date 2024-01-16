@@ -1,1 +1,1 @@
-https://hci-private.vercel.app/
+https://gamedev-page.vercel.app/
