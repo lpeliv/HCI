@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 const ContentfulDataStore = () => {
     const [data, setData] = useState<any>(null);
+    const [searchQuery, setSearchQuery] = useState<string>('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,10 +30,37 @@ const ContentfulDataStore = () => {
         return <div className="text-blue-50 p-10 rounded-lg">Loading...</div>;
     }
 
-    const filteredData = data.filter((entry: any) => entry.sys.contentType.sys.id === 'store');
+    const filteredData = data.filter((entry: any) => {
+        const itemName = (entry.fields.itemName || '').toLowerCase();
+        const query = searchQuery.toLowerCase();
+
+        if (query.length === 0) {
+            return entry.sys.contentType.sys.id === 'store';
+        }
+
+        if (entry.sys.contentType.sys.id !== 'store') {
+            return false;
+        }
+
+        return itemName.startsWith(query);
+    });
+
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchQuery(event.target.value);
+    };
 
     return (
         <div>
+            <div className="mb-10 ml-5 flex justify-start">
+                <input
+                    type="text"
+                    placeholder="Search items..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    className="p-2 border rounded-l text-blue-900 focus:outline-none focus:ring focus:border-blue-300"
+                    style={{ boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)' }}
+                />
+            </div>
             {filteredData.map((entry: any) => (
                 <div key={entry.sys.id} className="pb-2">
                     <div className="bg-gradient-to-r from-blue-900 to-blue-700 p-3 rounded-l m-2 shadow-lg
