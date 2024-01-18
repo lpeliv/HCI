@@ -27,7 +27,7 @@ const ContentfulData = () => {
   }, []);
 
   if (!data) {
-    return <div className="text-blue-900 p-10 rounded-lg">Loading...</div>;
+    return <div className="text-blue-50 p-10 rounded-lg">Loading...</div>;
   }
 
   const filteredData = data.filter((entry: any) => entry.sys.contentType.sys.id === 'blog');
