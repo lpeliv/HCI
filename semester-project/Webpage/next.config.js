@@ -7,7 +7,8 @@ const nextConfig = {
         "picsum.photos",
         "via.placeholder.com",
         "unsplash.com",
-        "source.unsplash.com"
+        "source.unsplash.com",
+        "images.ctfassets.net"
       ],
     },
   };
