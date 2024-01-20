@@ -101,12 +101,12 @@ const Dropdown: React.FC<DropdownProps> = ({ menuOpen, onClose }) => {
               </Link>
             </li>
             <li className="mb-1 text-center">
-              <Link href="/store" onClick={handleLinkClick}>
+              <Link href="/showcase" onClick={handleLinkClick}>
                 <span
                   className={`rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 ${isActive('/store') ? 'bg-brand-blue-900 text-blue-50' : 'bg-brand-blue-50'
                     } hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out`}
                 >
-                  Store
+                  Showcase
                 </span>
               </Link>
             </li>

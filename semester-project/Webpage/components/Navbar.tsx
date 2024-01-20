@@ -17,7 +17,7 @@ const pages: Page[] = [
     { href: "/about", title: "About Us" },
     { href: "/contact", title: "Contact Us" },
     { href: "/games", title: "Games" },
-    { href: "/store", title: "Store" },
+    { href: "/showcase", title: "Showcase" },
 ];
 
 const Navbar: React.FC = () => {
