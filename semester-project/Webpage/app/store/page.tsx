@@ -20,7 +20,7 @@ export default async function Store({
               </h1>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {items.map((item) => (
-                  <div className="bg-gradient-to-r from-blue-900 to-blue-700 p-3 rounded-l m-2 shadow-lg
+                  <div key={item.id} className="bg-gradient-to-r from-blue-900 to-blue-700 p-3 rounded-l m-2 shadow-lg
                   transition-all duration-500 ease-in-out transform hover:from-blue-200 
                   hover:to-blue-500 hover:shadow-xl hover:scale-110 text-blue-50 hover:text-blue-900"
                   style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.5)' }}>

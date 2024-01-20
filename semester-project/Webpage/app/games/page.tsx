@@ -53,7 +53,7 @@ const Card: React.FC<CardData & { even: boolean }> = ({
     style={{ padding: "20px", marginBottom: "0", width: "100%" }}
   >
     {typeof imageSrc === "string" ? (
-      <img src={imageSrc} alt={title} style={{ width: "100%", height: "auto" }} />
+      <Image src={imageSrc} alt={title} style={{ width: "100%", height: "auto" }} />
     ) : (
       <Image
         src={imageSrc}
