@@ -26,7 +26,7 @@ const gqlStoreQuery = `
   }
 `;
 
-const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
+const baseUrl = `https://graphql.contentful.com/content/v1/spaces/stud5n3cvo5e/environments/master`;
 
 const fetchStoreData = async (): Promise<StoreItem[]> => {
   try {
@@ -34,7 +34,7 @@ const fetchStoreData = async (): Promise<StoreItem[]> => {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
-              Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+              Authorization: `Bearer CH3QnaQPmv07zUDO0xBn4V26gKNRaBPTKSY4F-zS1hc`,
           },
           body: JSON.stringify({ query: gqlStoreQuery }),
       });
