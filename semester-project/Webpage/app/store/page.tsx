@@ -1,5 +1,5 @@
 import contentfulService from "@/app/lib/contentfulClient";
-import { useState } from "react";
+import { StoreItem } from "@/app/lib/contentfulClient";
 import Image from "next/image";
 
 export default async function Store({
@@ -7,7 +7,7 @@ export default async function Store({
   searchParams: Record<string, string | string[] | undefined>;
 }) {
   const items = await contentfulService.fetchStoreData();
-//   console.log('Store items fetched:', items);
+  //console.log('Store items fetched:', items);
 
   return (
     <main className="justify-between items-center pt-16 background-blue-900">
@@ -19,11 +19,11 @@ export default async function Store({
                 Welcome to the marketplace
               </h1>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                {items.map((item) => (
+                {items.map((item: StoreItem) => (
                   <div key={item.id} className="bg-gradient-to-r from-blue-900 to-blue-700 p-3 rounded-l m-2 shadow-lg
                   transition-all duration-500 ease-in-out transform hover:from-blue-200 
                   hover:to-blue-500 hover:shadow-xl hover:scale-110 text-blue-50 hover:text-blue-900"
-                  style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.5)' }}>
+                    style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.5)' }}>
                     <h2 className="text-lg font-semibold">{item.itemName}</h2>
                     <div className="mt-2 w-full h-32">
                       <Image
