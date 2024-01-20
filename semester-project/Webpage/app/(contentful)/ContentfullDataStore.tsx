@@ -11,7 +11,7 @@ const ContentfulDataStore = () => {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `https://cdn.contentful.com/spaces/stud5n3cvo5e/entries?access_token=CH3QnaQPmv07zUDO0xBn4V26gKNRaBPTKSY4F-zS1hc`
+                    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`
                 );
                 if (!response.ok) {
                     throw new Error('Failed to fetch data from Contentful');
