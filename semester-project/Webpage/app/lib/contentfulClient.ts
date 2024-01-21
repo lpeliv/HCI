@@ -4,7 +4,15 @@ export interface StoreItem {
   title: string;
   fileName: string;
   url: string;
+}
 
+export interface GameIcon {
+  id: string;
+  gameName: string;
+  title: string;
+  fileName: string;
+  url: string;
+  shortDescription: string;
 }
 
 const gqlStoreQuery = `
@@ -15,7 +23,6 @@ const gqlStoreQuery = `
           id
         }
         itemName
-        
         asset {
           title
           fileName
@@ -24,6 +31,25 @@ const gqlStoreQuery = `
       }
     }
   }
+`;
+
+const gqlGamesQuery = `
+query GameList {
+  gamesCollection {
+    items {
+      sys {
+        id
+      }
+      gameName
+      shortDescription
+      gamePoster {
+        title
+        fileName
+        url
+      }
+    }
+  }
+}
 `;
 
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
@@ -45,9 +71,6 @@ const fetchStoreData = async (): Promise<StoreItem[]> => {
 
       const responseBody = await response.json();
 
-      // if (!responseBody.data || !responseBody.data.storeCollection || !responseBody.data.storeCollection.items) {
-      //     throw new Error('No items found in the response');
-      // }
       const body = responseBody.data;
 
       const storeItems: StoreItem[] = body.storeCollection.items.map((item: any) => ({
@@ -65,8 +88,44 @@ const fetchStoreData = async (): Promise<StoreItem[]> => {
   }
 };
 
+const fetchGamesData = async (): Promise<GameIcon[]> => {
+  try {
+      const response = await fetch(baseUrl, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+          },
+          body: JSON.stringify({ query: gqlGamesQuery }),
+      });
+      
+      if (!response.ok) {
+          throw new Error('Failed to fetch data from Contentful');
+      }
+
+      const responseBody = await response.json();
+
+      const body = responseBody.data;
+
+      const gameIcons: GameIcon[] = body.gamesCollection.items.map((item: any) => ({
+          id: item.sys.id,
+          gameName: item.gameName,
+          shortDescription: item.shortDescription,
+          title: item.gamePoster.title,
+          fileName: item.gamePoster.fileName,
+          url: item.gamePoster.url,
+      }));
+
+    return gameIcons;
+  } catch (error) {
+      console.error('Error fetching store items:', error);
+      return [];
+  }
+};
+
 const contentfulService = {
   fetchStoreData,
+  fetchGamesData,
 };
 
 export default contentfulService;

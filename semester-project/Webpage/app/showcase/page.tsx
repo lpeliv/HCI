@@ -1,5 +1,4 @@
-import contentfulService from "@/app/lib/contentfulClient";
-import { StoreItem } from "@/app/lib/contentfulClient";
+import contentfulService, { StoreItem } from "@/app/lib/contentfulClient";
 import Image from "next/image";
 
 export default async function Store({
