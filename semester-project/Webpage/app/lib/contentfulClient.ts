@@ -13,6 +13,7 @@ export interface GameIcon {
   fileName: string;
   url: string;
   shortDescription: string;
+  filterLabel: string;
 }
 
 const gqlStoreQuery = `
@@ -47,6 +48,7 @@ query GameList {
         fileName
         url
       }
+      filterLabel
     }
   }
 }
@@ -114,6 +116,7 @@ const fetchGamesData = async (): Promise<GameIcon[]> => {
           title: item.gamePoster.title,
           fileName: item.gamePoster.fileName,
           url: item.gamePoster.url,
+          filterLabel: item.filterLabel,
       }));
 
     return gameIcons;

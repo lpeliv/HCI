@@ -53,6 +53,9 @@ export default async function Games({
                         height={100}
                       />
                     </div>
+                    <div className="text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl pt-10 pb-5">
+                      Tag: {item.filterLabel}
+                    </div>
                   </div>
                 ))}
               </div>
