@@ -13,11 +13,11 @@ export type Page = {
 
 const pages: Page[] = [
     { href: "/", title: "Home" },
-    { href: "/blog?_page=1&_limit=10", title: "Blog" },
-    { href: "/about", title: "About Us" },
-    { href: "/contact", title: "Contact Us" },
+    { href: "/blog", title: "Blog" },
     { href: "/games", title: "Games" },
     { href: "/showcase", title: "Showcase" },
+    { href: "/about", title: "About Us" },
+    { href: "/contact", title: "Contact Us" },
 ];
 
 const Navbar: React.FC = () => {

@@ -71,26 +71,6 @@ const Dropdown: React.FC<DropdownProps> = ({ menuOpen, onClose }) => {
               </Link>
             </li>
             <li className="mb-1 text-center">
-              <Link href="/about" onClick={handleLinkClick}>
-                <span
-                  className={`rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 ${isActive('/about') ? 'bg-brand-blue-900 text-blue-50' : 'bg-brand-blue-50'
-                    } hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out`}
-                >
-                  About
-                </span>
-              </Link>
-            </li>
-            <li className="mb-1 text-center">
-              <Link href="/contact" onClick={handleLinkClick}>
-                <span
-                  className={`rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 ${isActive('/contact') ? 'bg-brand-blue-900 text-blue-50' : 'bg-brand-blue-50'
-                    } hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out`}
-                >
-                  Contact us
-                </span>
-              </Link>
-            </li>
-            <li className="mb-1 text-center">
               <Link href="/games" onClick={handleLinkClick}>
                 <span
                   className={`rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 ${isActive('/games') ? 'bg-brand-blue-900 text-blue-50' : 'bg-brand-blue-50'
@@ -107,6 +87,26 @@ const Dropdown: React.FC<DropdownProps> = ({ menuOpen, onClose }) => {
                     } hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out`}
                 >
                   Showcase
+                </span>
+              </Link>
+            </li>
+            <li className="mb-1 text-center">
+              <Link href="/about" onClick={handleLinkClick}>
+                <span
+                  className={`rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 ${isActive('/about') ? 'bg-brand-blue-900 text-blue-50' : 'bg-brand-blue-50'
+                    } hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out`}
+                >
+                  About
+                </span>
+              </Link>
+            </li>
+            <li className="mb-1 text-center">
+              <Link href="/contact" onClick={handleLinkClick}>
+                <span
+                  className={`rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 ${isActive('/contact') ? 'bg-brand-blue-900 text-blue-50' : 'bg-brand-blue-50'
+                    } hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out`}
+                >
+                  Contact us
                 </span>
               </Link>
             </li>

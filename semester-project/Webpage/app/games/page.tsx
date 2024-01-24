@@ -1,6 +1,5 @@
 import contentfulService, { GameIcon } from "@/app/lib/contentfulClient";
 import Image from "next/image";
-
 export default async function Games({
 }: {
   searchParams: Record<string, string | string[] | undefined>;
@@ -53,7 +52,7 @@ export default async function Games({
                         height={100}
                       />
                     </div>
-                    <div className="text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl pt-10 pb-5">
+                    <div className="text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl pt-10 pb-10">
                       Tag: {item.filterLabel}
                     </div>
                   </div>

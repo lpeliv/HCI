@@ -1,55 +1,8 @@
-import Link from "next/link";
-import clsx from "clsx";
 import ContentfulData from '@/app/(contentful)/ContentfullData';
 
-// export interface Post {
-//   userId: number;
-//   id: number;
-//   title: string;
-//   body: string;
-// }
-
-interface Pagination {
-  limit: number;
-  page: number;
-}
-
-// const BASE_API_URL = "https://jsonplaceholder.typicode.com";
-
-// const getPosts = async (
-//   pagination: Pagination = {
-//     limit: 9999,
-//     page: 1,
-//   }
-// ): Promise<Post[]> => {
-//   const data = await fetch(
-//     `${BASE_API_URL}/posts?_limit=${pagination.limit}&_page=${pagination.page}`
-//   );
-//   return data.json();
-// };
-
-// const getTotalPosts = async (): Promise<number> => {
-//   const response = await fetch(`${BASE_API_URL}/posts?_limit=1`, {
-//     method: "HEAD",
-//   });
-
-//   return parseInt(response.headers.get("x-total-count") || "1", 10);
-// };
-
 export default async function Blog({
-  // searchParams,
 }: {
-    // searchParams: Record<string, string | string[] | undefined>;
   }) {
-  // const { _limit, _page } = searchParams;
-  // const [pageSize, page] = [_limit, _page].map(Number);
-  // const totalPosts = await getTotalPosts();
-  // const totalPages = Math.ceil(totalPosts / pageSize);
-
-  // const posts = await getPosts({
-  //   limit: pageSize,
-  //   page: page,
-  // });
 
   return (
     <main className="justify-between items-center pt-16">
@@ -60,7 +13,6 @@ export default async function Blog({
             <div className="relative max-w-[1000px] w-full aspect-w-4 aspect-h-2">
               <div className="whitespace-break-spaces font-bold">
                 {(
-                  //pagination here
                   <>
                     <ContentfulData />
                   </>
