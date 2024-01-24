@@ -18,7 +18,7 @@ const MainNav = ({ pages }: { pages: Page[] }) => {
                                     "uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 rounded-sm text-brand-blue-900 hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out",
                                     {
                                         "bg-brand-blue-900 text-brand-blue-100 pointer-events-none":
-                                            pathName === href,
+                                            (pathName === '/' && href === '/') || (pathName.startsWith(href) && href !== '/'),
                                     }
                                 )}
                             >

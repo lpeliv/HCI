@@ -18,7 +18,7 @@ const Dropdown: React.FC<DropdownProps> = ({ menuOpen, onClose }) => {
   const isActive = (href: string) => {
 
     if (typeof window !== 'undefined') {
-      return window.location.pathname === href;
+      return (window.location.pathname === '/' && href === '/') || window.location.pathname.startsWith(href) && href !== '/';
     }
   
     return false;
@@ -83,7 +83,7 @@ const Dropdown: React.FC<DropdownProps> = ({ menuOpen, onClose }) => {
             <li className="mb-1 text-center">
               <Link href="/showcase" onClick={handleLinkClick}>
                 <span
-                  className={`rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 ${isActive('/store') ? 'bg-brand-blue-900 text-blue-50' : 'bg-brand-blue-50'
+                  className={`rounded-sm block uppercase whitespace-nowrap font-roboto-condensed text-base px-5 py-3 mx-auto w-32 ${isActive('/showcase') ? 'bg-brand-blue-900 text-blue-50' : 'bg-brand-blue-50'
                     } hover:bg-brand-blue-200 text-2xl transition-all duration-300 ease-in-out`}
                 >
                   Showcase
