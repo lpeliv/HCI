@@ -42,12 +42,12 @@ const Games: FC<SearchParams> = async ({ searchParams }) => {
               </p>
               <GameFilter categories={gameTags} />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-10">
                 {filteredGames.map((item) => {
                   return (
                     <div
                       key={item.id}
-                      className="bg-gradient-to-r from-blue-900 to-blue-700 p-3 pb-16 rounded-l shadow-lg
+                      className="bg-gradient-to-r from-blue-900 to-blue-700 p-3 pb-32 rounded-l shadow-lg
                     transition-all duration-500 ease-in-out transform hover:from-blue-200 
                     hover:to-blue-500 hover:shadow-xl hover:scale-110 text-blue-50 hover:text-blue-900 group"
                       style={{ textShadow: '0px 0px 2px rgba(0, 0, 0, 0.5)' }}
