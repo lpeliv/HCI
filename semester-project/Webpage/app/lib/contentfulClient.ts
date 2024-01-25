@@ -58,71 +58,71 @@ const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.
 
 const fetchStoreData = async (): Promise<StoreItem[]> => {
   try {
-      const response = await fetch(baseUrl, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-              Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-          },
-          body: JSON.stringify({ query: gqlStoreQuery }),
-      });
-      
-      if (!response.ok) {
-          throw new Error('Failed to fetch data from Contentful');
-      }
+    const response = await fetch(baseUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      },
+      body: JSON.stringify({ query: gqlStoreQuery }),
+    });
 
-      const responseBody = await response.json();
+    if (!response.ok) {
+      throw new Error('Failed to fetch data from Contentful');
+    }
 
-      const body = responseBody.data;
+    const responseBody = await response.json();
 
-      const storeItems: StoreItem[] = body.storeCollection.items.map((item: any) => ({
-          id: item.sys.id,
-          itemName: item.itemName,
-          title: item.asset.title,
-          fileName: item.asset.fileName,
-          url: item.asset.url,
-      }));
+    const body = responseBody.data;
+
+    const storeItems: StoreItem[] = body.storeCollection.items.map((item: any) => ({
+      id: item.sys.id,
+      itemName: item.itemName,
+      title: item.asset.title,
+      fileName: item.asset.fileName,
+      url: item.asset.url,
+    }));
 
     return storeItems;
   } catch (error) {
-      console.error('Error fetching store items:', error);
-      return [];
+    console.error('Error fetching store items:', error);
+    return [];
   }
 };
 
 const fetchGamesData = async (): Promise<GameIcon[]> => {
   try {
-      const response = await fetch(baseUrl, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-              Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-          },
-          body: JSON.stringify({ query: gqlGamesQuery }),
-      });
-      
-      if (!response.ok) {
-          throw new Error('Failed to fetch data from Contentful');
-      }
+    const response = await fetch(baseUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      },
+      body: JSON.stringify({ query: gqlGamesQuery }),
+    });
 
-      const responseBody = await response.json();
+    if (!response.ok) {
+      throw new Error('Failed to fetch data from Contentful');
+    }
 
-      const body = responseBody.data;
+    const responseBody = await response.json();
 
-      const gameIcons: GameIcon[] = body.gamesCollection.items.map((item: any) => ({
-          id: item.sys.id,
-          gameName: item.gameName,
-          shortDescription: item.shortDescription,
-          title: item.gamePoster.title,
-          fileName: item.gamePoster.fileName,
-          url: item.gamePoster.url,
-          filterLabel: item.filterLabel,
-      }));
+    const body = responseBody.data;
+
+    const gameIcons: GameIcon[] = body.gamesCollection.items.map((item: any) => ({
+      id: item.sys.id,
+      gameName: item.gameName,
+      shortDescription: item.shortDescription,
+      title: item.gamePoster.title,
+      fileName: item.gamePoster.fileName,
+      url: item.gamePoster.url,
+      filterLabel: item.filterLabel,
+    }));
 
     return gameIcons;
   } catch (error) {
-      console.error('Error fetching store items:', error);
-      return [];
+    console.error('Error fetching store items:', error);
+    return [];
   }
 };
 
